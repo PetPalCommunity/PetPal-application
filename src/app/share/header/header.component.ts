@@ -22,7 +22,7 @@ import { Component } from '@angular/core';
   `,
   styles: `
     header {
-      background-color: #333;
+      background-color: var(--accent4-color);
       color: white;
       padding: 10px 20px;
     }

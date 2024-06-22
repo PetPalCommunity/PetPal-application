@@ -1,0 +1,16 @@
+<div class="post-card">
+    <div class="post-info">
+      <img [src]="post.authorImage" alt="Author Image" class="author-image">
+      <div class="text-info">
+        <h3>{{ post.authorName }}</h3>
+        <span>{{ post.publishDate | date }}</span>
+        <p>
+          {{ showFullDescription ? post.description : (post.description | slice:0:100) + '...' }}
+          <a href="#" (click)="toggleDescription($event)">
+            {{ showFullDescription ? '' : 'Mostrar más' }}
+          </a>
+        </p>
+      </div>
+    </div>
+    <img [src]="post.postImage" alt="Post Image" class="post-image">
+  </div>

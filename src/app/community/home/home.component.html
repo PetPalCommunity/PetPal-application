@@ -1,0 +1,29 @@
+<div class="community-home">
+    <div class="community-header">
+        <img [src]="community.img" alt="Community Image" class="community-image">
+        <div class="header-info">
+            <h1>{{ community.name }}</h1>
+            <p>{{ community.description }}</p>
+            <div class="follow-button">
+                <button (click)="followCommunity()">Seguir</button>
+                <span *ngIf="community.followers === 1">1 seguidor</span>
+                <span *ngIf="community.followers !== 1">{{ community.followers }} seguidores</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="community-posts">
+        <h2>Publicaciones</h2>
+        <div *ngFor="let post of community.posts" class="post-card">
+            <div class="post-info">
+                <img [src]="post.authorImage" alt="Author Image" class="author-image">
+                <div class="text-info">
+                    <h3>{{ post.authorName }}</h3>
+                    <span>{{ post.publishDate | date }}</span>
+                    <p>{{ post.description }}</p>
+                </div>
+            </div>
+            <img [src]="post.postImage" alt="Post Image" class="post-image">
+        </div>
+    </div>
+</div>
