@@ -1,0 +1,27 @@
+<app-vet-header></app-vet-header>
+<div class="profile-container">
+    <app-profile-summary
+    [profilePicture]="profileImageUrl"
+    [name]="name"
+    [title]="title"
+    [rating]="rating"
+    ></app-profile-summary>
+    <div class="communities">
+      <h3>Communities</h3>
+      <div class="community-list">
+        <div class="community-card" *ngFor="let community of communities">
+          <img [src]="community.image" [alt]="community.name">
+          <p>{{ community.name }}</p>
+        </div>
+        <div class="add-community" (click)="addCommunity()">
+          <span>+</span>
+        </div>
+      </div>
+    </div>
+    <div class="gallery">
+      <div class="gallery-item" *ngFor="let image of galleryImages">
+        <img [src]="image" alt="Gallery Image">
+      </div>
+    </div>
+  </div>
+  

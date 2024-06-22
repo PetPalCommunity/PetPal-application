@@ -1,0 +1,25 @@
+<app-vet-header></app-vet-header> <!-- Reuse the vet-specific header -->
+<div class="home-container">
+  <div class="sidebar">
+    <div class="profile-section">
+      <img class="profile-picture" src="https://api.dicebear.com/9.x/adventurer/svg?seed=Callie" alt="Profile">
+      <div class="profile-info">
+        <p class="username">vet.ale</p>
+        <p class="fullname">{{ vetName }}</p>
+      </div>
+    </div>
+    <div class="menu">
+      <button mat-button routerLink="/vet/messages">
+        <mat-icon>message</mat-icon>
+        <span>Messages</span>
+      </button>
+      <button mat-button (click)="addPost()">
+        <mat-icon>add_circle</mat-icon>
+        <span>Create</span>
+      </button>
+    </div>
+  </div>
+  <div class="content">
+    <app-post *ngFor="let post of communityPosts" [post]="post" [descriptionLimit]="descriptionLimit"></app-post>
+  </div>
+</div>

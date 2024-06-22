@@ -12,7 +12,7 @@ import { LandingComponent } from './landing/landing.component';
     ShareComponent,
     HeaderComponent,
     FooterComponent,
-    LandingComponent
+    LandingComponent,
   ],
   imports: [
     CommonModule,
