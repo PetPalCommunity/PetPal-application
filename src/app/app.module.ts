@@ -5,10 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShareModule } from './share/share.module';
 import { CommunityModule } from './community/community.module';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { VetProfileComponent } from './vet-profile/vet-profile.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VetProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -17,7 +20,9 @@ import { CommunityModule } from './community/community.module';
     CommunityModule,
     
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
