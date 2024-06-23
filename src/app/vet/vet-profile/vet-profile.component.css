@@ -142,3 +142,16 @@
     object-fit: cover;
   }
   
+  .status-box {
+    margin: 20px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+  }
+  
+  .pending {
+    color: red;
+  }

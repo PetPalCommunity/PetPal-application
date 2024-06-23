@@ -1,3 +1,4 @@
+<div *ngIf="verified; else pendingTemplate">
 <app-vet-header></app-vet-header>
 <div class="profile-container">
     <app-profile-summary
@@ -24,4 +25,12 @@
       </div>
     </div>
   </div>
-  
+</div>
+  <ng-template #pendingTemplate>
+    <app-pending-verification
+    [profilePicture]="profileImageUrl"
+    [name]="name"
+    [title]="title"
+    [rating]="0"
+  ></app-pending-verification>
+  </ng-template>

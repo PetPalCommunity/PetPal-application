@@ -22,7 +22,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
-
+import { PendingVerificationComponent } from './pending-verification/pending-verification.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar'; 
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     AppointmentDialogComponent,
     ProfileSummaryComponent,
     CertificationComponent, // Declare CertificationComponent
-    SimpleHeaderComponent // Declare SimpleHeaderComponent
+    SimpleHeaderComponent, PendingVerificationComponent // Declare SimpleHeaderComponent
   ],
   imports: [
     CommonModule,
@@ -50,7 +51,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatDividerModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule 
   ]
 })
 export class VetModule { }

@@ -10,6 +10,7 @@ export class VetProfileComponent implements OnInit {
   title: string = 'Veterinarian Dogs & Cats';
   profileImageUrl: string = 'https://api.dicebear.com/9.x/adventurer/svg?seed=Callie'; // Profile picture URL
   rating: number = 4; // Rating out of 5
+  verified: boolean = true;
   communities: { name: string, image: string }[] = [
     { name: 'Groomers Clínica Veterinária', image: 'https://api.dicebear.com/9.x/big-ears-neutral/svg?seed=Abby'},
     { name: 'Consejos de Veterinarios', image: 'https://api.dicebear.com/9.x/big-ears-neutral/svg?seed=Gracie' }
