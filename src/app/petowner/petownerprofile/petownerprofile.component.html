@@ -1,0 +1,32 @@
+<div *ngIf="verified; else pendingTemplate">
+  <app-petownerheader></app-petownerheader>
+  <div class="profile-container">
+    <app-profilesummary
+      [profilePicture]="profileImageUrl"
+      [name]="name"
+      [title]="title"
+      [followers]="followers"
+    ></app-profilesummary>
+
+    <div class="pets-container">
+      <h2 class="pets-title">Pets</h2>
+      <div class="pet-profiles-container">
+        <div class="pet-profile" *ngFor="let pet of pets">
+          <app-profile-summary-pet
+            [profilePicture]="pet.profilePicture"
+            [name]="pet.name"
+            [petType]="pet.petType"
+            [breed]="pet.breed"
+          ></app-profile-summary-pet>
+          <button class="enter-profile-button">Enter Profile</button>
+        </div>
+        <div class="add-pet-container">
+          <button class="new-pet-button" (click)="openPetRegistrationForm()">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<ng-template #pendingTemplate>
+</ng-template>

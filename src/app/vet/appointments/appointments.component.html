@@ -1,0 +1,33 @@
+<app-vet-header></app-vet-header> <!-- Reuse the vet-specific header -->
+<div class="appointments-container">
+    <app-profile-summary
+    [profilePicture]="profileImageUrl"
+    [name]="name"
+    [title]="title"
+    [rating]="rating"
+    ></app-profile-summary>
+  <div class="controls">
+    <button mat-icon-button (click)="changeDay(-1)">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    <span>{{ currentDay }}</span>
+    <button mat-icon-button (click)="changeDay(1)">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+  <div class="schedule">
+    <div class="time-column">
+      <div *ngFor="let time of generateTimes()" class="time">{{ time }}</div>
+    </div>
+    <div class="appointments-column">
+      <div
+        *ngFor="let appointment of getAppointmentsForDay(currentDay)"
+        [style]="getAppointmentStyle(appointment)"
+        (click)="openAppointmentDialog(appointment)"
+        class="appointment"
+      >
+        {{ appointment.motive }}
+      </div>
+    </div>
+  </div>
+</div>

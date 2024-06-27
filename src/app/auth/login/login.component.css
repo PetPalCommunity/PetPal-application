@@ -1,0 +1,125 @@
+.background {
+  background: url('/assets/Fondo.png');
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: #A1C7EB;
+}
+
+.logo {
+  height: 50px;
+}
+
+.nav {
+  display: flex;
+  gap: 50px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.login-container, .register-container {
+  padding: 130px;
+  border-radius: 10px;
+}
+
+.login-form, .register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.login-form h1, .register-form h1 {
+  font-family: 'Fira Sans', sans-serif;
+  color: #EFC926;
+}
+
+.role-selection {
+  display: flex;
+  gap: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 100px;
+  width: 200px;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+button {
+  background-color: #EFC926;
+  color: white;
+  border: none;
+  width: 200px;
+  padding: 10px;
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: 'Fira Sans', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #D4A817;
+}
+
+button.signup-button {
+  background-color: #A1C7EB;
+}
+
+button.signup-button:hover {
+  background-color: #91AED4;
+}
+
+.forgot-password {
+  color: #A1C7EB;
+  text-decoration: none;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  background-color: #A1C7EB;
+}
+
+.subscribe,
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: white;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.submit-button {
+  background-color: white;
+  color: #A1C7EB;
+  border: 1px solid #A1C7EB;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #f0f0f0;
+}

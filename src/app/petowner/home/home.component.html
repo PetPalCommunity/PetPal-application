@@ -1,0 +1,28 @@
+<app-petownerheader></app-petownerheader>
+<div class="home-container">
+  <div class="sidebar">
+    <div class="profile-section">
+      <img class="profile-picture" src="https://images.pexels.com/photos/1310522/pexels-photo-1310522.jpeg" alt="Profile">
+      <div class="profile-info">
+        <p class="username">jacky123</p>
+        <p class="fullname">{{ petOwner }}</p>
+        <p class="followers">Followers: {{ followers }}</p>
+        <p class="following">Following: {{ following }}</p>
+      </div>
+    </div>
+    <div class="menu">
+      <button mat-button routerLink="/petowner/messages">
+        <mat-icon>message</mat-icon>
+        <span>Messages</span>
+      </button>
+      <button mat-button (click)="addPost()">
+        <mat-icon>add_circle</mat-icon>
+        <span>Create</span>
+      </button>
+    </div>
+  </div>
+  <div class="content">
+    <h1>Welcome Back, {{ petOwner }}</h1>
+    <app-post *ngFor="let post of communityPosts" [post]="post" [descriptionLimit]="descriptionLimit"></app-post>
+  </div>
+</div>

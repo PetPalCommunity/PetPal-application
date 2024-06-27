@@ -1,0 +1,48 @@
+.appointments-container {
+    padding: 20px;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .schedule {
+    display: flex;
+  }
+  
+  .time-column {
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .time {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .appointments-column {
+    flex: 1;
+    position: relative;
+  }
+  
+  .appointment {
+    position: absolute;
+    width: calc(100% - 60px);
+    margin-left: 60px;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: yellow; /* Default background for unconfirmed appointments */
+  }
+  
+  .appointment.confirmed {
+    background-color: lightgreen; /* Background for confirmed appointments */
+  }
+  

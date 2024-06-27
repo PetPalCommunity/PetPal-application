@@ -1,0 +1,24 @@
+/* Asegura que el body y html ocupen toda la altura */
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  /* El contenedor principal que envuelve todo el contenido */
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el contenedor ocupe al menos la altura de la ventana */
+  }
+  
+  /* El contenedor del contenido principal */
+  .content {
+    flex: 1; /* Esto hace que el contenido tome el espacio disponible */
+  }
+  
+  /* Estilo para el footer */
+  app-footer {
+    background-color: #f8f9fa;
+    text-align: center;
+  }
+  

@@ -1,0 +1,58 @@
+.header {
+  background-color: #c2d8f1; /* Light blue background */
+  padding: 10px 20px;
+  font-family: 'Fira Sans', sans-serif;
+  width: 100%; /* Ensure header spans full width */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto; /* Center the content */
+  max-width: 1200px; /* Optional: set a max width for the container */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 60px; /* Adjust logo size */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 10px;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 15px; /* Add padding for better hover area */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.nav a:hover {
+  background-color: #fff; /* Change background on hover */
+  color: #ffd700; /* Gold color for text on hover */
+}
+
+button {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #fff;
+  color: #ffd700;
+}
