@@ -7,7 +7,6 @@ import { CommunitiesComponent } from './communities/communities.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { VetHeaderComponent } from './vet-header/vet-header.component';
 import { HomeComponent } from './home/home.component';
-import { PostComponent } from './post/post.component';
 import { AppointmentsComponent } from './appointments/appointments.component';
 import { AppointmentDialogComponent } from './appointment-dialog/appointment-dialog.component';
 import { ProfileSummaryComponent } from './profile-summary/profile-summary.component';
@@ -24,15 +23,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { PendingVerificationComponent } from './pending-verification/pending-verification.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar'; 
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
     VetProfileComponent,
+    PostComponent,
     CommunitiesComponent,
     GalleryComponent,
     VetHeaderComponent,
     HomeComponent,
-    PostComponent,
     AppointmentsComponent,
     AppointmentDialogComponent,
     ProfileSummaryComponent,

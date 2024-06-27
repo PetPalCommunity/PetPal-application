@@ -1,0 +1,56 @@
+.medical-history-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    font-family: 'Fira Sans', sans-serif;
+  }
+  
+  .left-column, .right-column {
+    flex: 1;
+    margin: 10px;
+  }
+  
+  .pet-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .pet-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .pet-details {
+    flex: 1;
+  }
+  
+  .emergency-contacts p {
+    margin: 5px 0;
+  }
+  
+  .medical-details p {
+    margin: 10px 0;
+  }
+  
+  .notifications {
+    margin-top: 20px;
+  }
+  
+  .reminder {
+    margin-bottom: 10px;
+  }
+  
+  .reminder h4 {
+    margin: 0 0 5px 0;
+  }
+  
+  button {
+    display: block;
+    margin-top: 10px;
+  }
+  

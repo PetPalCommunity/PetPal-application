@@ -1,0 +1,17 @@
+<app-pet-header></app-pet-header>
+<div class="pet-profile-container">
+  <div class="pet-header">
+    <div class="profile-info">
+      <img class="pet-image" [src]="pet.image" alt="{{ pet.name }}">
+      <button mat-icon-button class="edit-button" (click)="editProfile()">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+    <h2>{{ pet.name }}</h2>
+    <p>{{ pet.species }} - {{ pet.breed }}</p>
+    <p>{{ pet.age }} years old - {{ pet.sex }}</p>
+  </div>
+  <div class="pet-gallery">
+    <!-- Add pet gallery images here -->
+  </div>
+</div>

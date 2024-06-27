@@ -1,0 +1,37 @@
+<app-pet-header></app-pet-header>
+<div class="medical-history-container">
+  <div class="left-column">
+    <div class="pet-info">
+      <img class="pet-image" [src]="pet.image" alt="{{ pet.name }}">
+      <div class="pet-details">
+        <h2>{{ pet.name }}</h2>
+        <p>{{ pet.species }} - {{ pet.breed }}</p>
+        <p>Age: {{ pet.age }} years</p>
+        <p>Sex: {{ pet.sex }}</p>
+        <div class="emergency-contacts">
+          <p><b>Emergency Contacts:</b></p>
+          <p>Mom: +51 976 381 111</p>
+          <p>Vet: +51 992 756 999</p>
+        </div>
+      </div>
+    </div>
+    <div class="notifications">
+      <h3>Programmed Notifications</h3>
+      <div *ngFor="let reminder of reminders" class="reminder">
+        <h4>{{ reminder.name }}</h4>
+        <p>{{ reminder.description }}</p>
+      </div>
+      <button mat-raised-button color="primary" (click)="addReminder()">Add Reminder</button>
+    </div>
+  </div>
+  <div class="right-column">
+    <div class="medical-details">
+      <p><b>Vaccine:</b> Pending</p>
+      <p><b>Health:</b> Well</p>
+      <p><b>Weight:</b> 31 kg</p>
+      <p><b>Diet:</b> Barf</p>
+      <p><b>Location:</b> Lima, PE</p>
+      <p><b>Allergies:</b> None</p>
+    </div>
+  </div>
+</div>
