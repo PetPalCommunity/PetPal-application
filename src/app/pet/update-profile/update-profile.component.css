@@ -1,0 +1,12 @@
+.update-profile-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    font-family: 'Fira Sans', sans-serif;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  

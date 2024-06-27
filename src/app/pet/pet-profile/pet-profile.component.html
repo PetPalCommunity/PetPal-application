@@ -1,0 +1,20 @@
+<app-pet-header></app-pet-header>
+<div class="pet-profile-container">
+  <div class="pet-header">
+    <div class="profile-info">
+      <img class="pet-image" [src]="pet?.image" alt="{{ pet?.name }}">
+      <button mat-icon-button class="edit-button" (click)="editProfile(pet?.name ?? 'defautl')">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+    <h2>{{ pet?.name }}</h2>
+    <p>{{ pet?.species }} - {{ pet?.breed }}</p>
+    <p>{{ pet?.age }} years old - {{ pet?.sex }}</p>
+    <button mat-raised-button color="primary" (click)="viewMedicalHistory()">
+      Ver Historial Médico
+    </button>
+  </div>
+  <div class="pet-gallery">
+    
+  </div>
+</div>

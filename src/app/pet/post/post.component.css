@@ -1,0 +1,68 @@
+.post {
+    max-width: 400px; /* Adjust this to make the post box smaller */
+    width: 100%;
+    margin: 20px auto;
+    padding: 10px; /* Add padding for a better look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for visual depth */
+    border-radius: 8px; /* Rounded corners */
+    border: 1px solid #ddd; /* Border for a distinct post */
+    background-color: #fff; /* White background */
+  }
+  
+  .toggle-text {
+    display: inline;
+  }
+  
+  .show-more {
+    color: blue;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .show-more:hover {
+    text-decoration: underline;
+  }
+  
+  mat-card-actions {
+    display: flex;
+    align-items: center;
+    padding: 8px 0; /* Adjust padding to fit new size */
+  }
+  
+  button {
+    display: flex;
+    align-items: center;
+    color: #1e90ff; /* Blue color */
+  }
+  
+  button mat-icon {
+    margin-right: 4px;
+  }
+  
+  button:hover {
+    color: #ff4081; /* Pink color */
+  }
+  
+  .comments-section {
+    margin-top: 10px;
+  }
+  
+  .comment {
+    margin-bottom: 8px;
+  }
+  
+  .comment-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  button {
+    align-self: flex-start;
+  }
+  

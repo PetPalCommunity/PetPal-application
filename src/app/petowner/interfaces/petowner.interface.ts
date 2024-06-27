@@ -14,3 +14,12 @@ export interface petOwnerProfileDTO {
     petVisible: boolean
     
 }
+
+export interface petResponseDTO {
+    name: string,
+    species: string,
+    breed: string,
+    age: number,
+    sex: string,
+    image: string
+}

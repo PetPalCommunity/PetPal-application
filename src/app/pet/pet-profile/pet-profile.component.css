@@ -1,0 +1,39 @@
+.pet-profile-container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Fira Sans', sans-serif;
+  }
+  
+  .pet-header {
+    margin-top: 20px;
+  }
+  
+  .profile-info {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .pet-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .edit-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .pet-header h2 {
+    margin: 0;
+  }
+  
+  .pet-header p {
+    margin: 5px 0;
+    color: gray;
+  }
+  

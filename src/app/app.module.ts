@@ -10,6 +10,8 @@ import { AuthModule } from './auth/auth.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { AuthInterceptor } from './auth/interceptor/auth.interceptor';
+import { PetRoutingModule } from './pet/pet-routing.module';
+import { PetownerRoutingModule } from './petowner/petowner-routing.module';
 
 
 @NgModule({
@@ -24,6 +26,8 @@ import { AuthInterceptor } from './auth/interceptor/auth.interceptor';
     CommunityModule,
     FormsModule,
     ReactiveFormsModule,
+    PetRoutingModule ,
+    PetownerRoutingModule
     
     
   ],
