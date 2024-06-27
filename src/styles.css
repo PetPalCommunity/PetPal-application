@@ -1,0 +1,36 @@
+:root {
+    --background-color: #f8f9fa;
+    --font-color: #000000;
+    --accent1-color: #F491B0;
+    --accent2-color: #36A568;
+    --accent3-color: #0764A7;
+    --accent4-color: #A1C7EB;
+    --primary-boton: #EFC926;
+    --secondary-boton: #E4532C;
+
+    --font-family: Fira Sans, sans-serif;
+    --font-size: 16px;
+    
+  }
+  
+  html,
+  body {
+    height: 100%;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+  
+  .container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

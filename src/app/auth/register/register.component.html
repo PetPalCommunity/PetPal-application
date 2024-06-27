@@ -1,0 +1,22 @@
+<div class="background">
+  <div class="register-container">
+    <form [formGroup]="form" (ngSubmit)="signUp()" class="register-form">
+      <h1>Join Us!</h1>
+      <div class="role-selection" >
+        <input type="radio" id="vet" formControlName="role" value="VET" />
+        <label for="vet">I'm a vet</label>
+        <input type="radio" id="owner" formControlName="role" value="PETOWNER" />
+        <label for="owner">I'm an Owner</label>
+      </div>
+      <input type="text" placeholder="First name" formControlName="firstname"/>
+      <input type="text" placeholder="Last name" formControlName="lastname"/>
+      <input type="text" placeholder="Alias" formControlName="alias"/>
+      <input type="email" placeholder="Email" formControlName="email"/>
+      <input type="password" placeholder="Password" formControlName="password"/>
+      <<!-- input type="password" placeholder="Verify password" formControlName=""/> -->
+      <input type="text" placeholder="Phone number" formControlName="phoneNumber" />
+      <button>Create Account</button>
+      <a href="/login" class="login-link">I already have an account</a>
+    </form>
+  </div>
+</div>

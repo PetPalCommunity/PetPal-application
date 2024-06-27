@@ -1,0 +1,15 @@
+<div class="background">
+  <div class="login-container">
+      <form [formGroup]="form" (ngSubmit)="login()" class="login-form">
+        <h1>WELCOME BACK!</h1>
+        <input type="text" placeholder="Username" formControlName="email"/>
+        <input type="password" placeholder="Password" formControlName="password"/>
+        <button>Sign in</button>
+        <a href="#" class="forgot-password">Forgot password</a>
+        <!-- Modificación del botón Sign Up -->
+        <button routerLink="/register" class="signup-button">Sign up</button>
+      </form>
+      
+  </div>
+
+</div>
