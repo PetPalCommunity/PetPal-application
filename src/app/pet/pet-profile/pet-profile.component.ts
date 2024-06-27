@@ -58,7 +58,10 @@ export class PetProfileComponent implements OnInit {
     });
   }
 
-  editProfile(): void {
-    this.router.navigate(['/pet/update-profile']); // Navigate to the Update Profile page
+  editProfile(petName:string): void {
+    this.router.navigate(['/pet/update-profile', petName]);
+  }
+  viewMedicalHistory(): void {
+    this.router.navigate(['/pet/medical-history', this.pet?.name]);
   }
 }

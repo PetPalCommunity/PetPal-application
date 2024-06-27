@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ReminderResponseDTO } from '../interface/pet.interface';
+import { PetRequestDTO, PetResponseDTO, ReminderResponseDTO } from '../interface/pet.interface';
 import { AddReminderDialogComponent } from '../add-reminder-dialog/add-reminder-dialog.component';
+import { FormBuilder } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PetService } from '../services/pet.service';
+import { PetOwnerService } from '../../petowner/services/petowner.service';
 
 @Component({
   selector: 'app-medical-history',
@@ -9,41 +13,73 @@ import { AddReminderDialogComponent } from '../add-reminder-dialog/add-reminder-
   styleUrls: ['./medical-history.component.css']
 })
 export class MedicalHistoryComponent implements OnInit {
-  pet = {
-    name: 'Floki',
-    species: 'Dog',
-    breed: 'Siberian Husky',
-    age: 3,
-    sex: 'Male',
-    image: 'https://s3-alpha-sig.figma.com/img/731b/492e/ef9902a973d62241d0021fbef3c6d973?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=lSn1mVke0-nZgoLVMXcen2ubij9tcG1nCVO~OS0~7z3k7PCuK4VmXBDqim7IP71rXv5ri1j27BprDXj1MbUHoRisAc6fII-5MmvwYaDja0T851h5g0BxIZXj4ft1d8gMZp-W8LD5FNPNfi3ZEyefkz1j6QMkEfDMIKq1rg-ecppta~0mABxlsv4NGxHgj8tBSjx1phobY0Ejzrf0g4Idj6g5dIsnli5hPAdqHMZYP0UEQQ5YxKePzAz43VKSuUK54JadqOB0Zlp-BbavrBjGN55sSt9HyPRexqAgwmuRfLUj-0xTB8H5biM8YP3qiEyYx4ykDW3oiKC53IDhxEOjVg__'
-  };
+  pet: PetResponseDTO | null = null;
+  alias: string = '';
+  reminders: ReminderResponseDTO[] = [];
+  contact: string = '';
 
-  reminders: ReminderResponseDTO[] = [
-    {
-      id: 1,
-      name: 'Programmed Walks',
-      description: '08:00 - 09:00\n19:00 - 20:30',
-      nextDate: '',
-      time: '',
-      days: ''
-    },
-    {
-      id: 2,
-      name: 'Next Vaccine/Medicine',
-      description: 'Year Vaccine: 03/10/24\nDe-worming: 10/05/24',
-      nextDate: '',
-      time: '',
-      days: ''
+  constructor(
+    private fb: FormBuilder,
+    private route: ActivatedRoute,
+    private petService: PetService,
+    private router: Router, 
+    private dialog: MatDialog,
+    private petOwnerService: PetOwnerService
+  ) {}
+
+  ngOnInit(): void {
+    const petName = this.route.snapshot.paramMap.get('petName');
+    const authDataString = localStorage.getItem('PetPal_auth');
+    
+    if (authDataString) {
+      const authData = JSON.parse(authDataString);
+      this.alias = authData.user.alias;
+    
+      if (this.alias && petName) {
+        this.loadPet(this.alias, petName);
+        this.loadUser(this.alias);
+        this.loadReminders(petName);
+      }
     }
-  ];
+  }
 
-  constructor(public dialog: MatDialog) {}
+  loadPet(alias: string, petName: string): void {
+    this.petService.getPetByOwnerAndName(alias, petName).subscribe({
+      next: (pet) => {
+        this.pet = pet;
+      },
+      error: (err) => {
+        console.error('Error al cargar la mascota:', err.message);
+      }
+    });
+  }
 
-  ngOnInit(): void {}
+  loadUser(alias: string): void {
+    this.petOwnerService.getProfile(alias).subscribe({
+      next: (user) => {
+        this.contact = user.sex == 'Hombre' ? "Dad: +51 " + user.phone : "Mom: +51 " + user.phone;
+      },
+      error: (err) => {
+        console.error('Error al cargar el usuario:', err.message);
+      }
+    });
+  }
 
+  loadReminders(petName: string): void {
+    this.petService.getReminders(petName).subscribe({
+      next: (reminders) => {
+        this.reminders = reminders;
+      },
+      error: (err) => {
+        console.error('Error al cargar los recordatorios:', err.message);
+      }
+    });
+  }
+  
   addReminder(): void {
     const dialogRef = this.dialog.open(AddReminderDialogComponent, {
-      width: '300px'
+      width: '300px',
+      data: { petName: this.pet?.name }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -59,5 +95,18 @@ export class MedicalHistoryComponent implements OnInit {
         this.reminders.push(newReminder);
       }
     });
+  }
+
+  deleteReminder(reminderId: number): void {
+    if (this.pet?.name) {
+      this.petService.deleteReminder(this.pet.name, reminderId).subscribe({
+        next: () => {
+          this.reminders = this.reminders.filter(reminder => reminder.id !== reminderId);
+        },
+        error: (err) => {
+          console.error('Error al eliminar el recordatorio:', err.message);
+        }
+      });
+    }
   }
 }

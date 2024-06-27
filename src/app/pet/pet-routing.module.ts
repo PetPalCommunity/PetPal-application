@@ -8,8 +8,8 @@ import { CreatePetComponent } from './create-pet/create-pet.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'pet-profile/:alias/:petName', component: PetProfileComponent },
-  { path: 'update-profile', component: UpdateProfileComponent },
-  { path: 'medical-history', component: MedicalHistoryComponent },
+  { path: 'update-profile/:petName', component: UpdateProfileComponent },
+  { path: 'medical-history/:petName', component: MedicalHistoryComponent },
   { path: 'new', component: CreatePetComponent },
   // other routes...
 ];

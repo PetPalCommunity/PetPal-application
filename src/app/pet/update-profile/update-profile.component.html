@@ -1,7 +1,7 @@
 <app-pet-header></app-pet-header>
 <div class="update-profile-container">
-  <h2>Update Profile</h2>
-  <form [formGroup]="updateProfileForm" (ngSubmit)="onSubmit()">
+  <h2>Update Pet</h2>
+  <form [formGroup]="updateProfileForm" (ngSubmit)="updatePet()">
     <mat-form-field appearance="fill">
       <mat-label>Name</mat-label>
       <input matInput formControlName="name" required>
@@ -27,11 +27,6 @@
       <input matInput formControlName="sex" required>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Image URL</mat-label>
-      <input matInput formControlName="image" required>
-    </mat-form-field>
-
-    <button mat-raised-button color="primary" type="submit">Save Changes</button>
+    <button mat-raised-button color="primary" type="submit" >Save Changes</button>
   </form>
 </div>

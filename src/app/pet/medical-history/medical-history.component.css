@@ -53,4 +53,48 @@
     display: block;
     margin-top: 10px;
   }
+
+  .notifications {
+    padding: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+  }
+  
+  .title {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  .reminder {
+    margin-bottom: 16px;
+  }
+  
+  mat-card {
+    margin-bottom: 16px;
+    position: relative;
+  }
+  
+  mat-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  mat-card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  mat-card-content p {
+    margin: 4px 0;
+  }
+  
+  button {
+    display: block;
+    margin: 16px auto 0;
+  }
+
   

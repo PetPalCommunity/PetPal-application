@@ -32,7 +32,7 @@ export class PetownerprofileComponent implements OnInit {
       
     ){}
     ngOnInit(): void {
-      const authDataString = localStorage.getItem('banking_auth');
+      const authDataString = localStorage.getItem('PetPal_auth');
       if (authDataString) {
         const authData = JSON.parse(authDataString);
         this.alias = authData.user.alias;

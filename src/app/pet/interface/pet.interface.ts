@@ -23,3 +23,11 @@ export interface PetRequestDTO {
     age: number;
     sex: string;
 }
+
+export interface ReminderRequestDTO {
+  petName: string,
+  name: string,
+  description: string,
+  time: string,
+  days: Array<string>
+}

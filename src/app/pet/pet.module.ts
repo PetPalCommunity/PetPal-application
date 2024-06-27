@@ -18,6 +18,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatLabel } from '@angular/material/form-field';
 import { MatDivider } from '@angular/material/divider';
 import { CreatePetComponent } from './create-pet/create-pet.component';
+import { MatSelect, MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { CreatePetComponent } from './create-pet/create-pet.component';
     ReactiveFormsModule,
     FormsModule,
     MatCardModule,
-    MatDivider
+    MatDivider,
+    MatSelectModule
   ]
 })
 export class PetModule { }
