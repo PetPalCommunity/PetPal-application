@@ -5,15 +5,19 @@ import { PetProfileComponent } from './pet-profile/pet-profile.component';
 import { RouterModule } from '@angular/router';
 import { MedicalHistoryComponent } from './medical-history/medical-history.component';
 import { PetRoutingModule } from './pet-routing.module';
+import { UpdateProfileComponent } from './update-profile/update-profile.component'; 
+import { AddReminderDialogComponent } from './add-reminder-dialog/add-reminder-dialog.component';
+import { HomeComponent } from './home/home.component';
+import { PostComponent } from './post/post.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { UpdateProfileComponent } from './update-profile/update-profile.component'; 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
-import { AddReminderDialogComponent } from './add-reminder-dialog/add-reminder-dialog.component';
+import { MatCardModule } from '@angular/material/card';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MatLabel } from '@angular/material/form-field';
+import { MatDivider } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,9 @@ import { MatLabel } from '@angular/material/form-field';
     PetProfileComponent,
     MedicalHistoryComponent,
     UpdateProfileComponent,
-    AddReminderDialogComponent
+    AddReminderDialogComponent,
+    HomeComponent,
+    PostComponent,
   ],
   imports: [
     MatButtonModule,
@@ -35,6 +41,9 @@ import { MatLabel } from '@angular/material/form-field';
     MatDialogModule,
     MatLabel,
     ReactiveFormsModule,
+    FormsModule,
+    MatCardModule,
+    MatDivider
   ]
 })
 export class PetModule { }

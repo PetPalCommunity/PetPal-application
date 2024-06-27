@@ -1,0 +1,29 @@
+<app-pet-header></app-pet-header> <!-- Reuse the vet-specific header -->
+<div class="home-container">
+  <div class="sidebar">
+    <div class="profile-section">
+      <img class="profile-picture" src="https://s3-alpha-sig.figma.com/img/731b/492e/ef9902a973d62241d0021fbef3c6d973?Expires=1720396800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=lSn1mVke0-nZgoLVMXcen2ubij9tcG1nCVO~OS0~7z3k7PCuK4VmXBDqim7IP71rXv5ri1j27BprDXj1MbUHoRisAc6fII-5MmvwYaDja0T851h5g0BxIZXj4ft1d8gMZp-W8LD5FNPNfi3ZEyefkz1j6QMkEfDMIKq1rg-ecppta~0mABxlsv4NGxHgj8tBSjx1phobY0Ejzrf0g4Idj6g5dIsnli5hPAdqHMZYP0UEQQ5YxKePzAz43VKSuUK54JadqOB0Zlp-BbavrBjGN55sSt9HyPRexqAgwmuRfLUj-0xTB8H5biM8YP3qiEyYx4ykDW3oiKC53IDhxEOjVg__" alt="Profile">
+      <div class="profile-info">
+        <p class="username">Floki</p>
+        <p class="fullname">{{ vetName }}</p>
+      </div>
+    </div>
+    <div class="menu">
+      <button mat-button routerLink="/vet/messages">
+        <mat-icon>message</mat-icon>
+        <span>Messages</span>
+      </button>
+      <button mat-button (click)="addPost()">
+        <mat-icon>add_circle</mat-icon>
+        <span>Create</span>
+      </button>
+      <button mat-button>
+        <mat-icon>person</mat-icon>
+        <span>Emergency vet</span>
+      </button>
+    </div>
+  </div>
+  <div class="content">
+    <app-post *ngFor="let post of communityPosts" [post]="post" [descriptionLimit]="descriptionLimit"></app-post>
+  </div>
+</div>
