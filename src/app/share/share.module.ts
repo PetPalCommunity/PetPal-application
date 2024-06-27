@@ -5,6 +5,7 @@ import { ShareComponent } from './share.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LandingComponent } from './landing/landing.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { LandingComponent } from './landing/landing.component';
   ],
   imports: [
     CommonModule,
+    RouterModule
   ],
   exports: [HeaderComponent, FooterComponent]
 })

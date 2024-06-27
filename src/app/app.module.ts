@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShareModule } from './share/share.module';
 import { CommunityModule } from './community/community.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { CommunityModule } from './community/community.module';
     AppRoutingModule,
     ShareModule,
     CommunityModule,
+    RouterModule
     
   ],
   providers: [],
