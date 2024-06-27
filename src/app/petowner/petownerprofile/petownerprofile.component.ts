@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { PetRegistrationFormComponent } from '../pet-registration-form/pet-registration-form.component';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { PetOwnerService } from '../services/petowner.service';
+import { petResponseDTO } from '../interfaces/petowner.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-petownerprofile',
@@ -19,12 +21,15 @@ export class PetownerprofileComponent implements OnInit {
     description: string = '';
     profileImage: SafeUrl = '';
     defaultProfileImage: string = 'assets/default.jpg';
+    pets: petResponseDTO[] = [];
   
     readonly descriptionLimit: number = 100;
   dialog: any;
     constructor(
       private petOwnerService: PetOwnerService,
-      private sanitizer: DomSanitizer
+      private sanitizer: DomSanitizer,
+      private router: Router,
+      
     ){}
     ngOnInit(): void {
       const authDataString = localStorage.getItem('banking_auth');
@@ -33,6 +38,7 @@ export class PetownerprofileComponent implements OnInit {
         this.alias = authData.user.alias;
         
         this.showData();
+        this.showPets();
       }
     }
     
@@ -67,6 +73,44 @@ export class PetownerprofileComponent implements OnInit {
       });
     }
     openPetRegistrationForm() {
-      this.dialog.open(PetRegistrationFormComponent);
+      this.router.navigate(['/pet/new']);
     }
+    showPets(): void {
+      this.petOwnerService.getPets(this.alias).subscribe({
+        next: (pets) => {
+          this.pets = pets;
+          this.pets.forEach(pet => {
+            if (pet.image) {
+              this.loadPetImage(pet);
+            }
+            else if(pet.species == 'Perro'){
+              pet.image = 'assets/perro.png';
+            }
+            else if(pet.species == 'Gato'){
+              pet.image = 'assets/gatp.jpg';
+            }
+          });
+        },
+        error: (err) => {
+          console.error('Error al obtener mascotas:', err.message);
+        }
+      });
+    }
+  
+    loadPetImage(pet: petResponseDTO): void {
+      this.petOwnerService.getFile(pet.image).subscribe({
+        next: (imageBlob) => {
+          const objectURL = URL.createObjectURL(imageBlob);
+          pet.image = this.sanitizer.bypassSecurityTrustUrl(objectURL) as string;
+        },
+        error: (err) => {
+          console.error('Error al cargar imagen de la mascota:', err.message);
+          pet.image = 'assets/default-pet.jpg'; // Usa la imagen por defecto en caso de error
+        }
+      });
+    }
+    goToPetProfile(petId: string, petName: string): void {
+      this.router.navigate(['/pet-profile', this.alias, petName]);
+    }
+  
   }

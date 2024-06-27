@@ -5,7 +5,7 @@ import { catchError, map, Observable, throwError } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { AuthRequestDTO, AuthResponseDTO } from '../interfaces/auth.interface';
 
-const authKey = 'banking_auth';
+const authKey = 'PetPal_auth';
 
 @Injectable({
   providedIn: 'root'

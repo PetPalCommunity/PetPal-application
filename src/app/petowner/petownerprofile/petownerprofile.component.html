@@ -11,15 +11,15 @@
     <div class="pets-container">
       <h2 class="pets-title">Pets</h2>
       <div class="pet-profiles-container">
-        <!-- <div class="pet-profile" *ngFor="let pet of pets">
+        <div class="pet-profile" *ngFor="let pet of pets">
           <app-profile-summary-pet
-            [profilePicture]="pet.profilePicture"
+            [profilePicture]="pet.image"
             [name]="pet.name"
-            [petType]="pet.petType"
+            [petType]="pet.species"
             [breed]="pet.breed"
           ></app-profile-summary-pet>
-          <button class="enter-profile-button">Enter Profile</button>
-        </div> -->
+          <button class="enter-profile-button" (click)="goToPetProfile(alias,pet.name)">Enter Profile</button>
+        </div>
         <div class="add-pet-container">
           <button class="new-pet-button" (click)="openPetRegistrationForm()">+</button>
         </div>
