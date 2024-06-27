@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
@@ -55,4 +56,19 @@ export class LoginComponent implements OnInit {
       duration: 3000,
     }); 
   }
+=======
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-login',
+  template: `
+    <p>
+      login works!
+    </p>
+  `,
+  styles: ``
+})
+export class LoginComponent {
+
+>>>>>>> vet
 }

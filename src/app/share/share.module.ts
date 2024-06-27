@@ -5,7 +5,10 @@ import { ShareComponent } from './share.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LandingComponent } from './landing/landing.component';
+<<<<<<< HEAD
 import { RouterModule } from '@angular/router';
+=======
+>>>>>>> vet
 
 
 @NgModule({
@@ -13,12 +16,19 @@ import { RouterModule } from '@angular/router';
     ShareComponent,
     HeaderComponent,
     FooterComponent,
+<<<<<<< HEAD
     LandingComponent
   ],
   imports: [
     CommonModule,
     RouterModule
     
+=======
+    LandingComponent,
+  ],
+  imports: [
+    CommonModule,
+>>>>>>> vet
   ],
   exports: [HeaderComponent, FooterComponent]
 })

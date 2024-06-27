@@ -1,0 +1,10 @@
+<app-simple-header></app-simple-header>
+<div class="certification-container">
+  <label for="file-upload" class="upload-label">
+    <div class="upload-box">
+      <p>Upload Vet Certificate</p>
+      <span>Once approved your account will be activated</span>
+    </div>
+  </label>
+  <input id="file-upload" type="file" (change)="onFileSelected($event)" hidden>
+</div>

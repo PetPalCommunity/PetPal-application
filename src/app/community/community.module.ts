@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+<<<<<<< HEAD
 import { CommunityComponent } from './community.component';
 import { MyCommunitiesComponent } from './explore/my-communities/my-communities.component';
 import { CommunityCardComponent } from './explore/community-card/community-card.component';
@@ -18,10 +19,15 @@ import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CommunityRoutingModule } from './community-routing.module';
+=======
+import { CommunityRoutingModule } from './community-routing.module';
+import { CommunityComponent } from './community.component';
+>>>>>>> vet
 
 
 @NgModule({
   declarations: [
+<<<<<<< HEAD
     CommunityComponent,
     MyCommunitiesComponent,
     CommunityCardComponent,
@@ -45,6 +51,13 @@ import { CommunityRoutingModule } from './community-routing.module';
     FormsModule,
     MatCardModule,
     MatDivider,
+=======
+    CommunityComponent
+  ],
+  imports: [
+    CommonModule,
+    CommunityRoutingModule
+>>>>>>> vet
   ]
 })
 export class CommunityModule { }

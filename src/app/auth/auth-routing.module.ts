@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthComponent } from './auth.component';
+<<<<<<< HEAD
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
@@ -17,6 +18,10 @@ const routes: Routes = [
   { path: 'changePassword', component: changePasswordComponent}
 
 ];
+=======
+
+const routes: Routes = [{ path: '', component: AuthComponent }];
+>>>>>>> vet
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

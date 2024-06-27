@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ShareModule } from './share/share.module';
 import { CommunityModule } from './community/community.module';
+<<<<<<< HEAD
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthModule } from './auth/auth.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -17,11 +18,19 @@ import { PetownerRoutingModule } from './petowner/petowner-routing.module';
 @NgModule({
   declarations: [
     AppComponent
+=======
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+>>>>>>> vet
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ShareModule,
+<<<<<<< HEAD
     AuthModule,
     CommunityModule,
     FormsModule,
@@ -37,6 +46,13 @@ import { PetownerRoutingModule } from './petowner/petowner-routing.module';
       multi: true},
     provideAnimationsAsync()
     
+=======
+    CommunityModule,
+    
+  ],
+  providers: [
+    provideAnimationsAsync()
+>>>>>>> vet
   ],
   bootstrap: [AppComponent]
 })

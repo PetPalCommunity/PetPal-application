@@ -5,17 +5,21 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { AuthComponent } from './auth.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+<<<<<<< HEAD
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { changePasswordComponent } from './changePassword/changePassword.component';
 import { VerifyComponent } from './verify/verify.component';
+=======
+>>>>>>> vet
 
 
 @NgModule({
   declarations: [
     AuthComponent,
     LoginComponent,
+<<<<<<< HEAD
     RegisterComponent,
     ResetPasswordComponent,
     changePasswordComponent,
@@ -28,6 +32,13 @@ import { VerifyComponent } from './verify/verify.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
+=======
+    RegisterComponent
+  ],
+  imports: [
+    CommonModule,
+    AuthRoutingModule
+>>>>>>> vet
   ]
 })
 export class AuthModule { }

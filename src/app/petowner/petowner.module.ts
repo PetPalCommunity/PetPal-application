@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+<<<<<<< HEAD
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 
@@ -40,6 +41,20 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatCardModule,
     MatDividerModule,
     MatFormFieldModule
+=======
+
+import { PetownerRoutingModule } from './petowner-routing.module';
+import { PetownerComponent } from './petowner.component';
+
+
+@NgModule({
+  declarations: [
+    PetownerComponent
+  ],
+  imports: [
+    CommonModule,
+    PetownerRoutingModule
+>>>>>>> vet
   ]
 })
 export class PetownerModule { }

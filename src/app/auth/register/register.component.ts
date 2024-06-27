@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -66,3 +67,19 @@ export class RegisterComponent implements OnInit{
     });
   }
 }
+=======
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-register',
+  template: `
+    <p>
+      register works!
+    </p>
+  `,
+  styles: ``
+})
+export class RegisterComponent {
+
+}
+>>>>>>> vet
