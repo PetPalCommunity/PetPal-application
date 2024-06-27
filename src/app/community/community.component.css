@@ -1,0 +1,20 @@
+.community-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .community-column {
+    margin: 10px;
+  }
+  
+  .my-communities {
+    flex: 0 1 30%; /* 0 (no crece), 1 (puede encogerse), ocupa 30% del espacio disponible */
+    min-width: 300px; /* Ancho mínimo para my-communities */
+  }
+
+  .posts {
+    flex: 1 1 60%; /* 1 (crece), 1 (puede encogerse), ocupa 65% del espacio disponible */
+    min-width: 400px; /* Ancho mínimo para posts */
+  }

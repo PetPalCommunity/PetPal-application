@@ -25,6 +25,7 @@ import { AuthInterceptor } from './auth/interceptor/auth.interceptor';
     FormsModule,
     ReactiveFormsModule,
     
+    
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,
